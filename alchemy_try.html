@@ -14,10 +14,32 @@
   <script type="text/javascript">
 
     var config = {
-      dataSource: 'data/courses.json'
+      dataSource: 'data/courses.json',
+      nodeTypes: {"role": ["Course",
+                           "Language",
+                           "Provider",
+                           "Category",
+                           "Professor"]},
+
+      nodeStyle: {
+        "Course": {
+            color: "#00ff0e",
+        },
+        "Professor":{
+            color: "#00ff0e",
+            borderColor: "#00ffda"
+        },
+        "Category": {
+            color: "#ff7921",
+            borderColor: "#4f07ff"
+        }
+    },
+      cluster: true,
+      clusterColours: ["#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02"]
     };
     
     alchemy = new Alchemy(config);
+
   </script>
 </body>
 
