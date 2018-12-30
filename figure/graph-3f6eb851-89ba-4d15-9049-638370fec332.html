@@ -1,0 +1,44 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="../lib/vis/dist/vis.js"></script>
+      <link href="../lib/vis/dist/vis.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <div id="3f6eb851-89ba-4d15-9049-638370fec332"></div>
+    <script type="text/javascript">
+      var nodes = [{"id": 230, "label": "Pepsi", "group": "Manufacturer", "title": "(_230:Manufacturer {name: 'Pepsi'})"}, {"id": 229, "label": "Mountain Dew", "group": "Drink", "title": "(_229:Drink {calories: 9000, name: 'Mountain Dew'})"}, {"id": 222, "label": "Coca Cola", "group": "Manufacturer", "title": "(_222:Manufacturer {name: 'Coca Cola'})"}, {"id": 247, "label": "Coke Zero", "group": "Drink", "title": "(_247:Drink {calories: 0, name: 'Coke Zero'})"}, {"id": 246, "label": "Nicole", "group": "Person", "title": "(_246:Person {age: 24, name: 'Nicole'})"}, {"id": 221, "label": "Drew", "group": "Person", "title": "(_221:Person {age: 20, name: 'Drew'})"}];
+      var edges = [{"from": 230, "to": 229, "label": "MAKES"}, {"from": 222, "to": 247, "label": "MAKES"}, {"from": 246, "to": 229, "label": "LIKES"}, {"from": 246, "to": 247, "label": "LIKES"}, {"from": 221, "to": 229, "label": "LIKES"}];
+      var container = document.getElementById("3f6eb851-89ba-4d15-9049-638370fec332");
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: false
+          }
+      };
+      var network = new vis.Network(container, data, options);
+    </script>
+    </body>
+    </html>
+    
