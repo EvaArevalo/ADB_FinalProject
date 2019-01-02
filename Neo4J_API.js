@@ -85,22 +85,20 @@ function getAllEdges(categoryName) {
 
 //TODO: Fix the runQuery function
 function runQuery(query) {
-           //Promise based stuff
-            var readTxResultPromise = session.readTransaction(function (transaction,query) {
-              var result = transaction.run(query);
-              return result;
-        });
+    //Promise based stuff
+    var readTxResultPromise = session.readTransaction(function (transaction,query) {
+          var result = transaction.run(query);
+          return result;
+    });
 
-        readTxResultPromise.then(function (result) {
-          session.close();
-          console.log(result.records);
-        }).catch(function (error) {
-          console.log(error);
-        });
+    readTxResultPromise.then(function (result) {
+      session.close();
+      console.log(result.records);
+      return result
+    }).catch(function (error) {
+      console.log(error);
+    });
 }
-
-
-
 
 //**TODO** check if necessary
 driver.close();
